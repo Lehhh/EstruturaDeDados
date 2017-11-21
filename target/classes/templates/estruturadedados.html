@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Estrutura de dados</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous" />
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+</head>
+
+
+<style type="text/css">
+.form-group {
+	width: auto;
+}
+
+.form-control {
+	margin: 0 auto;
+}
+
+.cont {
+	width: 450px;
+	border: 5px #337ab7 solid;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.botoesFila {
+	margin: 0px 60px;
+}
+
+.botoesDeOrd {
+	align-content: flat
+}
+
+.botoes2 {
+	height: 0 auto;
+	margin: 10px;
+}
+
+.botoaDeletar {
+	margin: 10px;
+	width: 250px;
+}
+
+.tabela1 {
+	overflow-y: auto;
+	height: 250px;
+}
+
+.tabela2 {
+	overflow-y: auto;
+	height: 500px;
+}
+
+h1 {
+	margin-left: -70px;
+}
+</style>
+
+
+
+<body>
+	<h1 align="center">Adicionar/Remover por Fila</h1>
+
+	<div class="col-md-4 clearfix ">
+
+		<form action="organizarbubble" method="get" class="botoes2">
+			<button type="submit" class="btn btn-primary">Ordenar por
+				Bubble Sort</button>
+		</form>
+		<form action="organizarselection" method="get" class="botoes2">
+			<button type="submit" class="btn btn-primary">Ordenar por
+				Selection Sort</button>
+		</form>
+		<form action="organizarinsert" method="get" class="botoes2">
+			<button type="submit" class="btn btn-primary">Ordenar por
+				Insert Sort</button>
+		</form>
+		<form action="estruturadedados" method="get" class="botoes2">
+			<button type="submit" class="btn btn-primary">Bagunçar</button>
+		</form>
+
+		<div class="tabela1">
+			<table class="table table-hover">
+
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Metodo</th>
+						<th>Tempo</th>
+						<th>Trocas</th>
+					</tr>
+				</thead>
+				<tr th:each="dados : ${dados}">
+					<td><span th:text="${dados.id}"></span></td>
+					<td><span th:text="${dados.metodo}"></span></td>
+					<td><span th:text="${dados.tempo}"></span></td>
+					<td><span th:text="${dados.trocas}"></span></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="col-md-6"></div>
+	<div class="container-fluid clearfix cont col-md-12">
+		<div id="listaDeConvidados">
+			<form action="adicionar" method="post">
+				<div class="form-group">
+					<label for="nome">Nome</label> <input type="text"
+						class="form-control" name="nome" placeholder="Nome" />
+				</div>
+				<div class="form-group">
+					<label for="descricao">Descrição</label> <input type="text"
+						class="form-control" name="descricao" placeholder="Descrição" />
+				</div>
+				<div class="form-group">
+					<label for="categoria">Categoria</label> <input type="text"
+						class="form-control" name="categoria" placeholder="Categoria" />
+				</div>
+				<div class="form-group">
+					<label for="url">URL</label> <input type="text"
+						class="form-control" name="url" placeholder="URL" />
+				</div>
+				<div class="form-group">
+					<label for="id_metodo">id_metodo</label> <input type="text"
+						class="form-control" name="id_metodo" placeholder="id_metodo" />
+				</div>
+				<button type="submit" class="btn btn-primary botoesFila col-md-8">Adicionar</button>
+			</form>
+
+			<form action="deletar" method="post" class="col-md-10" align="right">
+				<button type="submit"
+					class="btn btn-primary botoaDeletar buttonposition">Deletar</button>
+			</form>
+		</div>
+	</div>
+
+
+	<h2></h2>
+	<div class="tabela2 col-md-12">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Descrição</th>
+					<th>Categoria</th>
+					<th>URL</th>
+					<th>id_metodo</th>
+				</tr>
+			</thead>
+			<tr th:each="imagem : ${imagens}">
+				<td><span th:text="${imagem.nome}"></span></td>
+				<td><span th:text="${imagem.descricao}"></span></td>
+				<td><span th:text="${imagem.categoria}"></span></td>
+				<td><span th:text="${imagem.url}"></span></td>
+				<td><span th:text="${imagem.id_metodo}"></span></td>
+			</tr>
+		</table>
+	</div>
+
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
