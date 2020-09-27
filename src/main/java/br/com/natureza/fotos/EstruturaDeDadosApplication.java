@@ -1,27 +1,19 @@
 package br.com.natureza.fotos;
 
 
-import java.sql.SQLException;
-
-import javax.sql.DataSource;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-///vai fazer apenas uma requisição no banco de dados para criar o arraylist de objetos, depois 
-
+import javax.sql.DataSource;
+import java.sql.SQLException;
 
 @SpringBootApplication
-public class Configuracao {
+public class EstruturaDeDadosApplication {
 
 	public static void main(String[] args) throws SQLException {
-		
-		SpringApplication.run(Configuracao.class, args);
-		
-		
-		
+		SpringApplication.run(EstruturaDeDadosApplication.class, args);
 	}
 	
 	@Bean
