@@ -1,5 +1,5 @@
 # Estrutura De Dados
-<h1> Projeto meio bosta do tempo da facu, de organizar os dados</h1> 
+<h1> Projeto meio bosta do tempo da facu de organizar os dados</h1> 
 
 <h2>Objetivo: </h2>
 
