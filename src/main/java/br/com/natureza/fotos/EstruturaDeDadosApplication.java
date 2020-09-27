@@ -10,10 +10,10 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 @SpringBootApplication
-public class Configuracao {
+public class EstruturaDeDadosApplication {
 
 	public static void main(String[] args) throws SQLException {
-		SpringApplication.run(Configuracao.class, args);
+		SpringApplication.run(EstruturaDeDadosApplication.class, args);
 	}
 	
 	@Bean

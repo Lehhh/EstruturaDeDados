@@ -1,4 +1,4 @@
-package br.com.natureza.fotos;
+package br.com.natureza.fotos.controllers;
 
 import br.com.natureza.fotos.services.DadosService;
 import br.com.natureza.fotos.services.FotosServices;
